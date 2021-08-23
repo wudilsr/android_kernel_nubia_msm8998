@@ -1,0 +1,35 @@
+# nubia configuration options
+
+config MACH_NUBIA
+	bool "nubia device"
+	depends on ARCH_QCOM
+	help
+	  Support for nubia products
+
+config MACH_NUBIA_MSM8998
+	bool "nubia MSM8998"
+	depends on ARCH_QCOM
+	select MACH_NUBIA
+	help
+	  Support for MSM8998 nubia variants
+
+menu "NUBIA board selection"
+
+	config MACH_NUBIA_NX595J
+		bool "NUBIA_NX595J_board"
+		select MACH_NUBIA_MSM8998
+		help
+		  Support for nubia z17s variant
+
+	config MACH_NUBIA_NX563J
+		bool "NUBIA_NX563J_board"
+		select MACH_NUBIA_MSM8998
+		help
+		  Support for nubia z17 variant
+	
+	config MACH_NUBIA_NX609J
+		bool "NUBIA_NX609J_board"
+		select MACH_NUBIA_MSM8998
+		help
+		  Support for nubia NX609J variant
+endmenu
